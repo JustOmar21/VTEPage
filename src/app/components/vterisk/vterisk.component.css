@@ -1,0 +1,61 @@
+.VTEValue {
+  display: block;
+  background-color: #feb9bb;
+  color: white;
+  width: 50px;
+  text-align: center;
+  position: relative;
+  transition-duration: 0.5s;
+}
+
+.VTECheck {
+  margin: auto 0px !important;
+  border-color: #feb9bb;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(254,185,187,1)'/></svg>");
+  align-self: flex-end;
+}
+
+.VTEValueSpace{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.VTECheck:focus {
+  border-color: #feb9bb;
+  box-shadow: 0 0 0 .25rem rgba(254,185,187,.25);
+}
+.VTECheck:checked {
+  background-color: #feb9bb;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba(255,255,255,1)'/></svg>");
+}
+
+.card {
+  margin: 5px 0;
+}
+
+.VTELabel , .VTEValue {
+  padding: 10px;
+}
+
+.VTELabel {
+  width: 80%;
+  text-align: start;
+}
+
+.btn-pink {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    --bs-btn-font-weight: 600;
+    --bs-btn-color:white;
+    --bs-btn-bg: #feb9bb;
+    --bs-btn-border-color:#feb9bb;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: rgba(254,185,187,.8);
+    --bs-btn-hover-border-color: #feb9bb;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: #feb9bb;
+    --bs-btn-active-bg: white;
+    --bs-btn-active-border-color: #feb9bb;
+}

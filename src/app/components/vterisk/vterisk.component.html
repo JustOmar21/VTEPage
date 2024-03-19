@@ -1,0 +1,299 @@
+<div class="container">
+  <h1>VTE Risk</h1>
+  <div class="card">
+    <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+      <div class="VTEValue align-self-stretch" [ngClass]="{
+        'bg-success' : VTEScore! <= 4,
+        'bg-danger' : VTEScore! > 4
+      }">
+        <span class="VTEValueSpace" #TotalScore>{{VTEScore}}</span>
+      </div>
+      <label class="form-check-label VTELabel me-2">Total Score</label>
+      <button class="btn btn-pink w-100">Update</button>
+    </div>
+  </div>
+  <div class="row">
+    <!-- #region General Section-->
+    <div class="col-md-6 col-sm-12 mb-2">
+      <h1>General</h1>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">4</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="preVTE">
+            <p class="m-0 flex-grow-1">Previous VTE (except in a single event related to by major surgery)</p>
+            <input (change)="checkValue($event)" type="checkbox" name="preVTE" id="preVTE"
+              class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">3</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="preSurgeryVTE">
+            <p class="m-0 flex-grow-1">Previous VTE provoked by major surgery</p>
+            <input (change)="checkValue($event)" type="checkbox" name="preSurgeryVTE" id="preSurgeryVTE"
+              class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">3</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="KnownRisk">
+            <p class="m-0 flex-grow-1">Known high - Risk thrombophilia</p>
+            <input (change)="checkValue($event)" type="checkbox" name="KnownRisk" id="KnownRisk"
+              class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">3</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="MedicalComo">
+            <p class="m-0 flex-grow-1">Medical comorbidties e.g</p>
+            <input (change)="checkValue($event)" type="checkbox" name="MedicalComo" id="MedicalComo"
+              class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="FamilyHistory">
+            <p class="m-0 flex-grow-1">Family history of unprovoked or estrogen - related VVTE in first - degree
+              relative</p>
+            <input (change)="checkValue($event)" type="checkbox" name="FamilyHistory" id="FamilyHistory"
+              class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="KnownLow">
+            <p class="m-0 flex-grow-1">Known low - risk thrombophilia ( No VTE )</p>
+            <input (change)="checkValue($event)" type="checkbox" name="KnownLow" id="KnownLow"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="Age">
+            <p class="m-0 flex-grow-1">Age >= 35</p>
+            <input (change)="checkValue($event)" type="checkbox" name="Age" id="Age"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="BMI30">
+            <p class="m-0 flex-grow-1">BMI > 30</p>
+            <input (change)="checkValue($event)" type="checkbox" name="BMI30" id="BMI30"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">2</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="BMI40">
+          <p class="m-0 flex-grow-1">BMI > 40</p>
+          <input (change)="checkValue($event)" type="checkbox" name="BMI40" id="BMI40"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="Parity">
+            <p class="m-0 flex-grow-1">Parity >= 3</p>
+          <input (change)="checkValue($event)" type="checkbox" name="Parity" id="Parity"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="Smoker">
+            <p class="m-0 flex-grow-1">Smoker</p>
+          <input (change)="checkValue($event)" type="checkbox" name="Smoker" id="Smoker"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="GrossVari">
+            <p class="m-0 flex-grow-1">Gross Varicose Veins</p>
+          <input (change)="checkValue($event)" type="checkbox" name="GrossVari" id="GrossVari"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- #endregion -->
+    <!-- #region Obsteric Risk Section-->
+    <div class="col-md-6 col-sm-12">
+      <h1>Obsteric Risk</h1>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="preEcl">
+            <p class="m-0 flex-grow-1">Pre-Eclampsia in current pregnancy</p>
+          <input (change)="checkValue($event)" type="checkbox" name="preEcl" id="preEcl"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="artVTE">
+          <p class="m-0 flex-grow-1">ART/IVF</p>
+          <input (change)="checkValue($event)" type="checkbox" name="artVTE" id="artVTE"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="MultiPreg">
+          <p class="m-0 flex-grow-1">Multiple pregnancy</p>
+          <input (change)="checkValue($event)" type="checkbox" name="MultiPreg" id="MultiPreg"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">2</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="CSLabor">
+          <p class="m-0 flex-grow-1">CS in labor</p>
+          <input (change)="checkValue($event)" type="checkbox" name="CSLabor" id="CSLabor"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="ElectiveCs">
+          <p class="m-0 flex-grow-1">Elective Cs</p>
+          <input (change)="checkValue($event)" type="checkbox" name="ElectiveCs" id="ElectiveCs"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="MidCav">
+          <p class="m-0 flex-grow-1">Mid Cavity or rotationaloperat. Del</p>
+          <input (change)="checkValue($event)" type="checkbox" name="MidCav" id="MidCav"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="prolongedLab">
+          <p class="m-0 flex-grow-1">Prolonged lab . > 24h</p>
+          <input (change)="checkValue($event)" type="checkbox" name="prolongedLab" id="prolongedLab"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="PPH">
+          <p class="m-0 flex-grow-1">PPH</p>
+          <input (change)="checkValue($event)" type="checkbox" name="PPH" id="PPH"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="PTCD">
+          <p class="m-0 flex-grow-1">PTCD &lt; 37 WKS</p>
+          <input (change)="checkValue($event)" type="checkbox" name="PTCD" id="PTCD"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="Stillbirth">
+          <p class="m-0 flex-grow-1">Stillbirth in current perg</p>
+          <input (change)="checkValue($event)" type="checkbox" name="Stillbirth" id="Stillbirth"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">3</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="surgicalPreg">
+            <p class="m-0 flex-grow-1">Any surgical procedure in Pregnancy/puerpeium except Perineal repair</p>
+            <input (change)="checkValue($event)" type="checkbox" name="surgicalPreg" id="surgicalPreg"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">3</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="Hyperemesis">
+          <p class="m-0 flex-grow-1">Hyperemesis</p>
+          <input (change)="checkValue($event)" type="checkbox" name="Hyperemesis" id="Hyperemesis"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">4</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="OHSS">
+          <p class="m-0 flex-grow-1">OHSS (1st trimester)</p>
+          <input (change)="checkValue($event)" type="checkbox" name="OHSS" id="OHSS"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="infection">
+          <p class="m-0 flex-grow-1">Current systemic infection</p>
+          <input (change)="checkValue($event)" type="checkbox" name="infection" id="infection"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body form-check-reverse form-switch p-0 d-flex  ">
+          <div class="VTEValue align-self-stretch"><span class="VTEValueSpace">1</span></div>
+          <label class="form-check-label VTELabel d-flex flex-fill" for="Immobility">
+          <p class="m-0 flex-grow-1">Immobility/Dehydration</p>
+          <input (change)="checkValue($event)" type="checkbox" name="Immobility" id="Immobility"
+            class="form-check-input VTECheck d-block">
+          </label>
+        </div>
+      </div>
+    </div>
+    <!-- #endregion -->
+  </div>
+
+</div>

@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { VTERiskComponent } from './components/vterisk/vterisk.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VTERiskComponent
   ],
   imports: [
     BrowserModule
